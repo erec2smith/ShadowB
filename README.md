@@ -29,7 +29,7 @@ pip install ShadowB
 - [safe](#safe)
 - [image](#image)
 - [passwords](#passwords)
-- [Responsible Use](#-responsible-use)
+- [Responsible Use](#%EF%B8%8F-responsible-use)
 - [License](#-license)
 
 ---
