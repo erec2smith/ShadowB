@@ -1,0 +1,197 @@
+# ShadowB
+
+![ShadowB Logo](https://raw.githubusercontent.com/erec2smith/ShadowB/main/shadowb.jpg)
+
+
+**ShadowB** is an all-in-one Python toolkit that bundles a wide range of everyday utilities — system info, image steganography, temporary email, QR codes, CAPTCHA generation, password tools, file safety checks, and more — into a single, easy-to-import package.
+
+Instead of installing and learning a dozen different libraries for a dozen small tasks, `ShadowB` collects the most commonly needed helper functions in one place.
+
+> 100% open source. No telemetry, no analytics, no external server. Every function runs **locally** on the user's own machine — nothing is collected or transmitted by the library's maintainers.
+
+---
+
+## Installation
+
+```bash
+pip install ShadowB
+```
+
+---
+
+## Table of Contents
+
+- [core](#core)
+- [getD](#getd)
+- [captcha](#captcha)
+- [qrcode](#qrcode)
+- [mail](#mail)
+- [safe](#safe)
+- [image](#image)
+- [passwords](#passwords)
+- [Responsible Use](#-responsible-use)
+- [License](#-license)
+
+---
+
+## `core`
+
+Basic package metadata and bootstrapping.
+
+```python
+from ShadowB import core
+
+core.start()        # run core app for : create passwords or usernames / organize the working files
+core.owner()        # -> "Adem mzoughi"
+core.team()         # -> "Adem mzoughi, Berlin, Shadow"
+core.hp()           # print help / usage info
+core.vr()           # print current version
+```
+
+---
+
+## `getD`
+
+Local system & network diagnostics — useful for things like monitoring your own machine's load, debugging your own network setup, or quick scripting.
+
+```python
+from ShadowB import getD
+
+# filename => "file" or "data" not "file.txt" or "data.txt"
+
+getD.my_ip(cout) # return => (local_ip,public_ip,country)
+
+# cout => True or False (It means whether it prints on the console what it found or not)
+
+
+getD.my_data(save,filename) # return => (username, hostname, local_ip, country, os_name, os_release, arch, ram_gb, total_gb, used_gb, free_gb)
+
+# save => True or False (It means do you want to save the data in a filetxt, and if yes give a name for the file, if not just put False with nothing else)
+
+
+getD.get_cookies(filename)   # export your own browser's cookies to a local .txt file
+
+
+getD.scan_open_ports(ip)    # return => (open_ports) 
+
+
+getD.whm()                # print the current working directory (e.g. C:/Users/Pc/Desktop)
+
+
+getD.get_ip_from_domain(domain) # return ip address from a domain name
+
+```
+
+> ⚠️ `get_cookies()` reads cookies from **your own** browser profile and `scan_open_ports()` should only be run against hosts you own or are authorized to test. See [Responsible Use](#-responsible-use).
+
+---
+## `captcha`
+
+Generate CAPTCHA images.
+
+```python
+from ShadowB import captcha
+
+captcha.generate_captcha("captcha") # image name
+```
+
+---
+
+## `qrcode`
+
+Generate and read QR codes.
+
+```python
+from ShadowB import qrcode
+
+qrcode.generate_qrcode(text, "qr")   # create a QR code image
+# text like => "hello world!"
+```
+
+---
+
+## `mail`
+
+Disposable email creation and sending (Gmail SMTP).
+
+```python
+from ShadowB import mail
+
+mail.create_email()                      # return => (email, password, token)
+mail.get_msj(token)                      # return => list of received messages => [(msj_id, date, sender, subject, msj),(msj_id, date, sender, subject, msj)]
+mail.send_msj(sender, app_password, to, subject, body)   # send via Gmail SMTP, return => 200 or 404
+# body => html or normal text
+```
+
+---
+
+## `safe`
+
+File inspection and sanitation helpers.
+
+```python
+from ShadowB import safe
+
+safe.safeFile(file)              # -> True / False
+safe.size(file)                  # -> file size
+safe.name(file)                  # -> file name
+safe.ext(file)                   # -> file extension
+safe.clean(file, check_list)     # -> True / False
+safe.cleanText(text, check_list) # -> True / False
+```
+
+---
+
+## `image`
+
+Metadata and steganography utilities.
+
+```python
+from ShadowB import image
+
+image.expMetadata(img)          # read EXIF / metadata
+image.check_img(img)            # -> True / False (contains hidden text/file)
+image.extr_file(img)            # extract a hidden file from the image
+image.extr_text(img)            # extract hidden text from the image
+image.removeMetadata(img)       # strip metadata (useful before sharing photos)
+image.hide_text(img, text)      # embed hidden text into the image
+image.hide_file(img, file)      # embed a hidden file into the image
+```
+
+---
+
+## `passwords`
+
+```python
+from ShadowB import passwords
+
+passwords.check_strenght(password)   # rate password strength
+passwords.create_password()          # generate a strong password
+```
+
+---
+
+## ⚖️ Responsible Use
+
+`ShadowB` is a general-purpose utility library, similar in spirit to combining tools like `requests`, `browser_cookie3`, `psutil`, `python-nmap`, and `Pillow`-based steganography helpers into one package. It performs no network exfiltration on its own and contacts no third-party server.
+
+That said, several functions are powerful and should be used responsibly:
+
+- Only run `get_cookies()` against your **own** browser profile.
+- Only use `scan_open_ports()` on systems/websites you **own** or are explicitly authorized to test.
+- Respect each platform's Terms of Service and applicable privacy laws when using `search.forgot.search_by_username`.
+- Don't use the steganography functions (`hide_text`, `hide_file`) to conceal malicious payloads or to deceive other people.
+
+You are responsible for complying with local laws and the terms of any service you interact with through this library.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+---
+
+## 👤 Author
+
+**Adem mzoughi** — 2026/23/06
