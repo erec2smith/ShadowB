@@ -82,7 +82,7 @@ getD.get_ip_from_domain(domain) # return ip address from a domain name
 
 ```
 
-> ⚠️ `get_cookies()` reads cookies from **your own** browser profile and `scan_open_ports()` should only be run against hosts you own or are authorized to test. See [Responsible Use](#-responsible-use).
+> ⚠️ `get_cookies()` reads cookies from **your own** browser profile and `scan_open_ports()` should only be run against hosts you own or are authorized to test. See [Responsible Use](#%EF%B8%8F-responsible-use).
 
 ---
 ## `captcha`
