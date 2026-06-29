@@ -1,4 +1,4 @@
-# ShadowB
+# ShadowB v-0.9
 
 ![ShadowB Logo](https://raw.githubusercontent.com/erec2smith/ShadowB/main/shadowb.jpg)
 
