@@ -1,7 +1,11 @@
 # ShadowB
 
-[![PyPI - Version](https://img.shields.io/pypi/v/ShadowB)](https://pypi.org/project/ShadowB/) | [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ShadowB)](https://pypi.org/project/ShadowB/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dd/ShadowB)](https://pypi.org/project/ShadowB/) | [![PyPI - License](https://img.shields.io/pypi/l/ShadowB)](https://pypi.org/project/ShadowB/)
+[![PyPI - Version](https://img.shields.io/pypi/v/ShadowB)](https://pypi.org/project/ShadowB/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ShadowB)](https://pypi.org/project/ShadowB/)
+
+[![PyPI - Downloads](https://img.shields.io/pypi/dd/ShadowB)](https://pypi.org/project/ShadowB/)
+[![PyPI - License](https://img.shields.io/pypi/l/ShadowB)](https://pypi.org/project/ShadowB/)
+
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue?style=for-the-badge&logo=python)](https://pypi.org/project/ShadowB/)
 
 ![ShadowB Logo](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/shadowb.jpg)
@@ -35,6 +39,7 @@ pip install ShadowB
 - [passwords](#passwords)
 - [console](#console)
 - [timer](#timer)
+- [test](#test)
 - [Responsible Use](#%EF%B8%8F-responsible-use)
 - [License](#-license)
 
@@ -55,6 +60,16 @@ core.version(True/False)           # print current version
 
 # True/False => print the result on the console 
 ```
+
+Code :
+
+![code](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/core_code.png)
+
+Output : 
+
+![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/core_output.png)
+
+
 
 ---
 
@@ -92,6 +107,16 @@ system.domain_informations(domain) # return ip address from a domain name
 
 > ⚠️ `cookies()` reads cookies from **your own** browser profile and `scan_open_ports()` should only be run against hosts you own or are authorized to test. See [Responsible Use](#%EF%B8%8F-responsible-use).
 
+Code :
+
+![code](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/system_code.png)
+
+Output : 
+
+![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/system_output.png)
+
+
+
 ---
 ## `captcha`
 
@@ -105,6 +130,16 @@ captcha.generate_captcha("captcha",True/False) # image name (not required)
 # return => captcha code : str
 # True/False (required)
 ```
+
+Code :
+
+![code](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/captcha_code.png)
+
+Output : 
+
+![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/captcha_output.png)
+
+
 
 ---
 
@@ -120,6 +155,16 @@ qrcode.generate_qrcode(text, "qr")   # create a QR code image
 # qr => image name (not required)
 ```
 
+Code :
+
+![code](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/qrcode_code.png)
+
+Output : 
+
+![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/qrcode_output.png)
+
+
+
 ---
 
 ## `mail`
@@ -134,6 +179,16 @@ mail.get_msj(token)                      # return => list of received messages =
 mail.send_msj(sender, app_password, to, subject, body)   # send via Gmail SMTP, return => 200 or 404
 # body => html or normal text
 ```
+
+Code :
+
+![code](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/mail_code.png)
+
+Output : 
+
+![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/mail_output.png)
+
+
 
 ---
 
@@ -165,6 +220,16 @@ safe.validate_text(text, check_list) # -> True / False
 
 ```
 
+Code :
+
+![code](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/safe_code.png)
+
+Output : 
+
+![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/safe_output.png)
+
+
+
 ---
 
 ## `image`
@@ -183,6 +248,16 @@ image.hide_text(img, text)      # embed hidden text into the image
 image.hide_file(img, file)      # embed a hidden file into the image
 ```
 
+Code :
+
+![code](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/image_code.png)
+
+Output : 
+
+![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/image_output.png)
+
+
+
 ---
 
 ## `passwords`
@@ -193,6 +268,13 @@ from ShadowB import passwords
 passwords.check_strength(password)   # rate password strength
 passwords.create_password()          # generate a strong password
 ```
+Code :
+
+![code](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/passwords_code.png)
+
+Output : 
+
+![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/passwords_output.png)
 
 ---
 
@@ -207,8 +289,16 @@ console.success(text) # return a green message like => [+] success
 console.error(text) # return a red message like => [-] error
 console.warning(text) # return a yellow message like => [!] warning
 console.info(text) # return a cyan message like => [*] info 
-
 ```
+Code :
+
+![code](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/console_code.png)
+
+Output : 
+
+![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/console_output.png)
+
+
 
 ## `timer`
 
@@ -235,10 +325,15 @@ print(timer.stop())
 
 # Note: after timer.stop(), you need to do timer.reset() so you can use multiple timers in the same code
 ```
+Code :
 
----
+![code](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/timer_code.png)
 
-## Test
+Output : 
+
+![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/timer_output.png)
+
+## test
 
 Code :
 
@@ -247,6 +342,12 @@ Code :
 Output : 
 
 ![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/output.png)
+
+Comprehensive example : 
+
+![gift](https://raw.githubusercontent.com/erec2smith/ShadowB/main/code.gift)
+
+---
 
 ## ⚖️ Responsible Use
 
