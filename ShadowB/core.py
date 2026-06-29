@@ -81,18 +81,25 @@ def start():
             print(Fore.RED + "-- They was an error, pls try again! --" + Style.RESET_ALL)
             break
         
-def owner():
-    print(Fore.YELLOW + "Adem mzoughi" + Style.RESET_ALL)
-    print(Fore.BLUE + "Github : https://github.com/erec2smith" + Style.RESET_ALL)
+def owner(cout=True):
+    if cout:
+        print(Fore.YELLOW + "Adem mzoughi" + Style.RESET_ALL)
+        print(Fore.BLUE + "Github : https://github.com/erec2smith" + Style.RESET_ALL)
+    return "Adem mzoughi"
 
-def version():
-    print(Fore.GREEN + "1.0" + Style.RESET_ALL)
+def version(cout=True):
+    if cout:
+        print(Fore.GREEN + "1.1" + Style.RESET_ALL)
+    return "1.1"
     
-def team():
-    print(Fore.YELLOW + "Adem" + Style.RESET_ALL)
-    print(Fore.GREEN + "Shadow" + Style.RESET_ALL)
-    print(Fore.BLUE + "Berlin" + Style.RESET_ALL)
+def team(cout=True):
+    if cout:
+        print(Fore.YELLOW + "Adem" + Style.RESET_ALL)
+        print(Fore.GREEN + "Shadow" + Style.RESET_ALL)
+        print(Fore.BLUE + "Berlin" + Style.RESET_ALL)
+    return "Adem, Berlin, Shadow"
 
-def help():
-    print(Fore.BLUE + "https://github.com/erec2smith/ShadowB" + Style.RESET_ALL)
-    
+def help(cout=True):
+    if cout:
+        print(Fore.BLUE + "https://github.com/erec2smith/ShadowB" + Style.RESET_ALL)
+    return "https://github.com/erec2smith/ShadowB"
