@@ -1,4 +1,4 @@
-# ShadowB v-0.9
+# ShadowB
 
 ![ShadowB Logo](https://raw.githubusercontent.com/erec2smith/ShadowB/main/shadowb.jpg)
 
@@ -29,6 +29,8 @@ pip install ShadowB
 - [safe](#safe)
 - [image](#image)
 - [passwords](#passwords)
+- [console](#console)
+- [timer](#timer)
 - [Responsible Use](#%EF%B8%8F-responsible-use)
 - [License](#-license)
 
@@ -184,6 +186,48 @@ from ShadowB import passwords
 
 passwords.check_strength(password)   # rate password strength
 passwords.create_password()          # generate a strong password
+```
+
+---
+
+## `console`
+
+Printing messages in different colors.
+
+```python
+from ShadowB import console
+
+console.success(text) # return a green message like => [+] success
+console.success(text) # return a red message like => [-] error
+console.success(text) # return a yellow message like => [!] warning
+console.success(text) # return a cyan message like => [*] info 
+
+```
+
+## `timer`
+
+A counter that counts the number of seconds your device took to run the code between timer.start() and timer.stop()
+
+```python
+from ShadowB import timer
+
+timer.start() # start timer
+timer.stop() # stop timer
+timer.reset() # reset timer
+
+ex:
+
+timer.start()
+
+print("hello world")
+print("hi ShadowB")
+print(timer.stop())
+timer.reset()
+print("="*50)
+print("new timer")
+print(timer.stop())
+
+# Note: after timer.stop(), you need to do timer.reset() so you can use multiple timers in the same code
 ```
 
 ---
