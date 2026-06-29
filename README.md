@@ -1,6 +1,10 @@
 # ShadowB
 
-![ShadowB Logo](https://raw.githubusercontent.com/erec2smith/ShadowB/main/shadowb.jpg)
+[![PyPI - Version](https://img.shields.io/pypi/v/ShadowB)](https://pypi.org/project/ShadowB/) | [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ShadowB)](https://pypi.org/project/ShadowB/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dd/ShadowB)](https://pypi.org/project/ShadowB/) | [![PyPI - License](https://img.shields.io/pypi/l/ShadowB)](https://pypi.org/project/ShadowB/)
+[![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue?style=for-the-badge&logo=python)](https://pypi.org/project/ShadowB/)
+
+![ShadowB Logo](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/shadowb.jpg)
 
 
 **ShadowB** is an all-in-one Python toolkit that bundles a wide range of everyday utilities — system info, image steganography, temporary email, QR codes, CAPTCHA generation, password tools, file safety checks, and more — into a single, easy-to-import package.
@@ -44,10 +48,12 @@ Basic package metadata and bootstrapping.
 from ShadowB import core
 
 core.start()        # run core app for : create passwords or usernames / organize the working files
-core.owner()        # -> "Adem mzoughi"
-core.team()         # -> "Adem mzoughi, Berlin, Shadow"
-core.help()           # print help / usage info
-core.version()           # print current version
+core.owner(True/False)        # -> "Adem mzoughi"
+core.team(True/False)         # -> "Adem mzoughi, Berlin, Shadow"
+core.help(True/False)           # print help / usage info
+core.version(True/False)           # print current version
+
+# True/False => print the result on the console 
 ```
 
 ---
@@ -198,9 +204,9 @@ Printing messages in different colors.
 from ShadowB import console
 
 console.success(text) # return a green message like => [+] success
-console.success(text) # return a red message like => [-] error
-console.success(text) # return a yellow message like => [!] warning
-console.success(text) # return a cyan message like => [*] info 
+console.error(text) # return a red message like => [-] error
+console.warning(text) # return a yellow message like => [!] warning
+console.info(text) # return a cyan message like => [*] info 
 
 ```
 
@@ -232,6 +238,16 @@ print(timer.stop())
 
 ---
 
+## Test
+
+Code :
+
+![code](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/code.png)
+
+Output : 
+
+![output](https://raw.githubusercontent.com/erec2smith/ShadowB/main/images/output.png)
+
 ## ⚖️ Responsible Use
 
 `ShadowB` is a general-purpose utility library, similar in spirit to combining tools like `browser_cookie3`, `qrcode`, `python-nmap`, and `Pillow`-based steganography helpers into one package. It performs no network exfiltration on its own and contacts no third-party server.
@@ -256,7 +272,5 @@ This project is licensed under the [MIT License](./LICENSE).
 ## 👤 Author
 
 **Adem mzoughi** — 2026/23/06
-
-![Adem img](https://raw.githubusercontent.com/erec2smith/ShadowB/main/adem.jpg)
 
 [Adem portfolio](https://erec2smith.pythonanywhere.com)
