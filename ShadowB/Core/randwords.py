@@ -69,9 +69,9 @@ def randw(rep,numbers,symbols,letters,form,filename="core_generate",others_chars
         print("The maximum number of slots you can reach is 5")
     if rep < 2:
         print("The smallest number of digits possible is 2")
-    desktop = Path.home() / "Desktop"
+    path = Path.cwd()
     words = [''.join(combo) for combo in ito.product(final_combo, repeat=rep)]
-    with open(desktop / f"{filename}.txt","w") as w:
+    with open(path / f"{filename}.txt","w") as w:
         for wr in words:
             w.write(wr + "\n")
-        print(f"Alright, it has been saved in : {desktop / (filename + '.txt')}")        
+        print(f"Alright, it has been saved in : {path / (filename + '.txt')}")        

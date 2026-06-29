@@ -86,7 +86,7 @@ def owner():
     print(Fore.BLUE + "Github : https://github.com/erec2smith" + Style.RESET_ALL)
 
 def version():
-    print(Fore.GREEN + "0.9" + Style.RESET_ALL)
+    print(Fore.GREEN + "1.0" + Style.RESET_ALL)
     
 def team():
     print(Fore.YELLOW + "Adem" + Style.RESET_ALL)

@@ -39,3 +39,12 @@ from .mail import send_msj
 from .captcha import generate_captcha
 
 from .qrcode import generate_qrcode
+
+from .console import success
+from .console import info
+from .console import warning
+from .console import error
+
+from .timer import start
+from .timer import stop
+from .timer import reset
