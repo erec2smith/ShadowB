@@ -345,7 +345,7 @@ Output :
 
 Comprehensive example : 
 
-![gift](https://raw.githubusercontent.com/erec2smith/ShadowB/main/code.gift)
+![gift](https://raw.githubusercontent.com/erec2smith/ShadowB/main/code.gif)
 
 ---
 
