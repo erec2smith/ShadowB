@@ -1,4 +1,4 @@
-# ShadowB
+# ShadowB 1.2
 
 [![PyPI - Version](https://img.shields.io/pypi/v/ShadowB)](https://pypi.org/project/ShadowB/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ShadowB)](https://pypi.org/project/ShadowB/)
@@ -115,10 +115,11 @@ Generate CAPTCHA images.
 ```python
 from ShadowB import captcha
 
-captcha.generate_captcha("captcha",True/False) # image name (not required)
+captcha.generate_captcha(True/False,image_name,path) # image_name like ("qr") (only the name without .png or .jpeg ...)(not required)
 # True => print the code in the console , False => it means not printing the code in the console
 # return => captcha code : str
 # True/False (required)
+# path like => r"C:\Users\Username\Downloads" (not required) (r => raw string avoids backslash escape errors on Windows paths) 
 ```
 
 Code :
@@ -138,9 +139,10 @@ Generate and read QR codes.
 ```python
 from ShadowB import qrcode
 
-qrcode.generate_qrcode(text, "qr")   # create a QR code image
+qrcode.generate_qrcode(text, image_name, path)   # create a QR code image
 # text like => "hello world!"
-# qr => image name (not required)
+# path like => r"c:/users/username/dekstop (not required) / Put a dot if you want it to be saved in the current path => "."
+# image_name => image name like ("qr") (only the name without .png or .jpeg ...) (not required) (r => raw string avoids backslash escape errors on Windows paths) 
 ```
 
 ---
@@ -206,13 +208,13 @@ Metadata and steganography utilities.
 ```python
 from ShadowB import image
 
-image.expMetadata(img)          # read EXIF / metadata
-image.check_img(img)            # -> True / False (contains hidden text/file)
-image.extr_file(img)            # extract a hidden file from the image
-image.extr_text(img)            # extract hidden text from the image
-image.removeMetadata(img)       # strip metadata (useful before sharing photos)
-image.hide_text(img, text)      # embed hidden text into the image
-image.hide_file(img, file)      # embed a hidden file into the image
+image.read_metadata(img)          # read EXIF / metadata
+image.has_hidden_data(img)        # -> True / False (contains hidden text/file)
+image.extract_file(img)           # extract a hidden file from the image
+image.extract_text(img)           # extract hidden text from the image
+image.strip_metadata(img)         # strip metadata (useful before sharing photos)
+image.embed_text(img, text)       # embed hidden text into the image
+image.embed_file(img, file)       # embed a hidden file into the image
 ```
 ---
 

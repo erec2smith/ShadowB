@@ -9,8 +9,13 @@ except ImportError:
         
    
 
-def qr(text, name):
-    output_filename = f"{name}.png"
+def qr(text, name, path):
+    if path and path not in [""," ","."]:
+        output_filename = f"{path}\{name}.png"
+        message = output_filename
+    else:
+        output_filename = f"{name}.png"
+        message = f"{Path.cwd()}\{output_filename}"
     try:
         qr = qrcode.QRCode(
             version=1, 
@@ -29,7 +34,7 @@ def qr(text, name):
        
         img.save(output_filename)
         
-        print(f"[+] QRCode was generated successfully : '{Path.cwd()}\{output_filename}'")
+        print(f"[+] QRCode was generated successfully : '{message}'")
         
     except Exception as e:
         print(f"[-]  Error : {e}")

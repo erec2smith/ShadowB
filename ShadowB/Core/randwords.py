@@ -4,7 +4,9 @@ import itertools as ito
 from pathlib import Path
 
 
-def randw(rep,numbers,symbols,letters,form,filename="core_generate",others_chars=""):
+def randw(rep,numbers,symbols,letters,form,ph="",filename="core_generate",others_chars=""):
+    if ph == ".":
+        ph = ""
     if others_chars is None:
         others_chars = ""
     if numbers and symbols and letters:
@@ -53,12 +55,7 @@ def randw(rep,numbers,symbols,letters,form,filename="core_generate",others_chars
     
     #symbols
     elif symbols and not letters and not numbers:
-        if form == "maj":
-            final_combo = string.punctuation + others_chars
-        elif form == "min":
-            final_combo = string.punctuation + others_chars
-        else:
-            final_combo = string.punctuation + others_chars
+        final_combo = string.punctuation + others_chars
             
     else:
         final_combo = string.ascii_letters + string.digits + string.punctuation + others_chars
@@ -69,7 +66,10 @@ def randw(rep,numbers,symbols,letters,form,filename="core_generate",others_chars
         print("The maximum number of slots you can reach is 5")
     if rep < 2:
         print("The smallest number of digits possible is 2")
-    path = Path.cwd()
+    if ph and ph not in [".", "", " "] and Path(ph).exists():
+        path = Path(ph)
+    else:
+        path = Path.cwd()
     words = [''.join(combo) for combo in ito.product(final_combo, repeat=rep)]
     with open(path / f"{filename}.txt","w") as w:
         for wr in words:

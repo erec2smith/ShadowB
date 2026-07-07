@@ -23,13 +23,13 @@ from .passwords import check_strength
 from .passwords import create_password
 
 
-from .image import expMetadata
-from .image import removeMetadata
-from .image import check_img
-from .image import hide_file
-from .image import hide_text
-from .image import extr_file
-from .image import extr_text
+from .image import read_metadata
+from .image import strip_metadata
+from .image import has_hidden_data
+from .image import embed_file
+from .image import embed_text
+from .image import extract_file
+from .image import extract_text
 
 
 from .mail import create_email

@@ -10,8 +10,13 @@ except ImportError:
     os.system(f"{sys.executable} -m pip install pillow")
     from PIL import Image, ImageDraw, ImageFont
 
-def generate_captcha(cout,name=random.randint(1000,9999)):
-    output_filename = f"{name}.png"
+def generate_captcha(cout,name=random.randint(1000,9999),path=""):
+    if path and path not in [""," ","."]:
+        output_filename = f"{path}\{name}.png"
+        message = output_filename
+    else:
+        output_filename = f"{name}.png"
+        message = output_filename
     characters = string.ascii_letters + string.digits
     captcha_text = ''.join(random.choice(characters) for _ in range(7))
     
@@ -59,7 +64,7 @@ def generate_captcha(cout,name=random.randint(1000,9999)):
  
     image.save(output_filename)
     
-    print(f"[+] Captcha code generated successfully : '{Path.cwd()}\{output_filename}'")
+    print(f"[+] Captcha code generated successfully : '{message}'")
     if cout:
         print(f"[+] Captcha code : {captcha_text}")
     
