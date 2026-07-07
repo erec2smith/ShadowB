@@ -51,7 +51,10 @@ def start():
                     letters = False
                 else:
                     letters = True
-                form = input(Fore.BLUE + "** Do you want to use only uppercase letters (maj), only lowercase letters (min), or both uppercase and lowercase letters (all)? (min/maj/all) : " + Style.RESET_ALL)   
+                if letters:
+                    form = input(Fore.BLUE + "** Do you want to use only uppercase letters (maj), only lowercase letters (min), or both uppercase and lowercase letters (all)? (min/maj/all) : " + Style.RESET_ALL)   
+                else:
+                    form = "none"
                 filename = input(Fore.BLUE + "** Please write the name of the file where you will save the attempts (like pass or passwords)(only the name) : " + Style.RESET_ALL)
                 if filename == "" or filename == " ":
                     filename = "core_generate"
@@ -65,7 +68,8 @@ def start():
                         for i in range(n):
                             char = input(Fore.BLUE + f"** Enter the word number {i+1} : " + Style.RESET_ALL)
                             others_chars += char
-                randw(rep,numbers,symbols,letters,form,filename,others_chars)
+                path = input(Fore.BLUE + rf"** Enter the path where you want to save the file, like (C:\Users\Username\Downloads), and if you want to store it in this path only, just put a dot (.) : " + Style.RESET_ALL)            
+                randw(rep,numbers,symbols,letters,form,path,filename,others_chars)
                 time.sleep(1)
                 print(Fore.GREEN + "="*50 + Style.RESET_ALL)
                 break
@@ -89,7 +93,7 @@ def owner(cout=True):
 
 def version(cout=True):
     if cout:
-        print(Fore.GREEN + "1.1" + Style.RESET_ALL)
+        print(Fore.GREEN + "1.2" + Style.RESET_ALL)
     return "1.1"
     
 def team(cout=True):
