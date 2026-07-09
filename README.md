@@ -1,4 +1,4 @@
-# ShadowB 1.2
+# ShadowB 1.3
 
 [![PyPI - Version](https://img.shields.io/pypi/v/ShadowB)](https://pypi.org/project/ShadowB/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ShadowB)](https://pypi.org/project/ShadowB/)
@@ -39,6 +39,7 @@ pip install ShadowB
 - [passwords](#passwords)
 - [console](#console)
 - [timer](#timer)
+- [emoji](#emoji)
 - [test](#test)
 - [Responsible Use](#%EF%B8%8F-responsible-use)
 - [License](#-license)
@@ -102,6 +103,9 @@ system.path()                # print the current working directory (e.g. C:/User
 
 
 system.domain_informations(domain) # return ip address from a domain name
+
+system.remove_file(path) # Deletes the selected file, return => 200 or 404 or 400
+# If the file is in the same path, you can just put its name and extension, but if it's in another path, you need to put the full path including its name and extension
 
 ```
 
@@ -265,6 +269,38 @@ print("new timer")
 print(timer.stop())
 
 # Note: after timer.stop(), you need to do timer.reset() so you can use multiple timers in the same code
+```
+
+## `emoji`
+
+A feature that lets you display an emoji in your code or choose a random emoji
+
+```python
+from ShadowB import emoji
+
+emoji.smile()
+
+{
+    .no_words(),
+    .birthday(),
+    .fire(),
+    .death(),
+    .coder(),
+    .skull(),
+    .heart(),
+    .sorry(),
+    .love_u(),
+    .crying(),
+    .idk(),
+    .insult()
+}
+
+emoji.random_emoji() # It gives you a random emoji
+
+exp:
+
+print(emoji.fire()) # 🔥
+
 ```
 
 ## test

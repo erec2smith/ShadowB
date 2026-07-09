@@ -7,7 +7,7 @@ except ImportError:
     import browser_cookie3
 
 
-def cookies(filename):
+def cookiees(filename):
     cookies = browser_cookie3.chrome()
 
 
@@ -24,4 +24,4 @@ def cookies(filename):
             f.write(line)
     
     print(f"Saved at : {filename}.txt and cookies") 
-    return cookies
+    return f"{filename}.txt"

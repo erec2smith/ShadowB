@@ -48,3 +48,18 @@ from .console import error
 from .timer import start
 from .timer import stop
 from .timer import reset
+
+from .emoji import smile
+from .emoji import no_words
+from .emoji import birthday
+from .emoji import fire
+from .emoji import death
+from .emoji import coder
+from .emoji import skull
+from .emoji import heart
+from .emoji import sorry
+from .emoji import love_u
+from .emoji import crying
+from .emoji import idk
+from .emoji import insult
+from .emoji import random_emoji

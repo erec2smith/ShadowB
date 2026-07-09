@@ -3,6 +3,8 @@ import socket
 import platform
 import ctypes
 import shutil
+import requests
+from .my_ip import get_ip
 
 def make_file(filename,save=True):
  
@@ -14,7 +16,6 @@ def make_file(filename,save=True):
 
     hostname = socket.gethostname()
     data.append(f"Hostname: {hostname}\n")
-
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.connect(("8.8.8.8", 80))
@@ -22,7 +23,16 @@ def make_file(filename,save=True):
         s.close()
     except Exception:
         local_ip = "Not available"
-    data.append(f"Local IP: {local_ip}\n")
+        
+    url = f"http://ip-api.com/json/{get_ip(False)[1]}"
+    response = requests.get(url)
+    api_data = response.json()
+    if api_data['status'] == 'success':
+        country = api_data['country']
+    else:
+        country = "None"
+        
+    data.append(f"Local IP: {local_ip}\nCountry: {country}\n")
 
     os_name = platform.system()
     os_release = platform.release()
@@ -31,7 +41,6 @@ def make_file(filename,save=True):
     data.append(f"Architecture: {arch}\n")
 
     
-
 
     try:
         class MEMORYSTATUSEX(ctypes.Structure):
@@ -71,15 +80,14 @@ def make_file(filename,save=True):
         data.append(f"Disk C: Used  {used_gb} GB\n")
         data.append(f"Disk C: Free  {free_gb} GB\n")
         
-        info = (username, hostname, local_ip, os_name, os_release, arch, ram_gb, total_gb, used_gb, free_gb)
+        info = (username, hostname, local_ip, country, os_name, os_release, arch, ram_gb, total_gb, used_gb, free_gb)
         
     except Exception as e:
         
         data.append(f"Disk C: Error reading usage - {str(e)}\n")
-        info = (username, hostname, local_ip, os_name, os_release, arch, ram_gb, "Error", "Error", "Error")
-
-    data.append("\n=== End of Information ===\n")
+        info = (username, hostname, local_ip, country, os_name, os_release, arch, ram_gb, "Error", "Error", "Error")
     
+    data.append("\n=== End of Information ===\n")
     if save:
         with open(f"{filename}.txt", "w", encoding="utf-8") as f:
             f.writelines(data)
