@@ -342,6 +342,6 @@ This project is licensed under the [MIT License](./LICENSE).
 
 ## 👤 Author
 
-**Adem mzoughi** — 2026/23/06
+**Adem mzoughi** —— 2026/23/06
 
 [Adem portfolio](https://erec2smith.pythonanywhere.com)
