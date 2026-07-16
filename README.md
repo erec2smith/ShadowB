@@ -1,4 +1,4 @@
-# ShadowB 1.3
+# ShadowB 1.4
 
 [![PyPI - Version](https://img.shields.io/pypi/v/ShadowB)](https://pypi.org/project/ShadowB/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ShadowB)](https://pypi.org/project/ShadowB/)
@@ -106,6 +106,12 @@ system.domain_informations(domain) # return ip address from a domain name
 
 system.remove_file(path) # Deletes the selected file, return => 200 or 404 or 400
 # If the file is in the same path, you can just put its name and extension, but if it's in another path, you need to put the full path including its name and extension
+
+system.spider(url) # he is looking for all the paths that exist / return => ["/path1","/path2"....]
+# url like => "https://mysite.com"
+
+system.wifi_speed(True/False) # measuring Wi-Fi speed / return => (donload_speed:float, upload_speed:float)
+# True or False (It means whether it prints on the console what it found or not)
 
 ```
 
@@ -342,6 +348,6 @@ This project is licensed under the [MIT License](./LICENSE).
 
 ## 👤 Author
 
-**Adem mzoughi** —— 2026/23/06
+**Adem mzoughi** — 2026/23/06
 
 [Adem portfolio](https://erec2smith.pythonanywhere.com)

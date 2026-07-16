@@ -10,6 +10,8 @@ from .system import cookies
 from .system import scan_open_ports
 from .system import path
 from .system import domain_informations
+from .system import spider
+from .system import wifi_speed
 
 from .safe import file_extension
 from .safe import name

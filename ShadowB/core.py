@@ -93,8 +93,8 @@ def owner(cout=True):
 
 def version(cout=True):
     if cout:
-        print(Fore.GREEN + "1.3" + Style.RESET_ALL)
-    return "1.3"
+        print(Fore.GREEN + "1.4" + Style.RESET_ALL)
+    return "1.4"
     
 def team(cout=True):
     if cout:
