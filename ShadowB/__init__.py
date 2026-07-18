@@ -18,6 +18,7 @@ from .safe import name
 from .safe import validate_text
 from .safe import scan_file
 from .safe import size
+from .safe import clean_text
 from .safe import safe_file
 
 
@@ -65,3 +66,11 @@ from .emoji import crying
 from .emoji import idk
 from .emoji import insult
 from .emoji import random_emoji
+
+from .fake import fake_csv
+from .fake import email
+from .fake import phone
+from .fake import username
+from .fake import age
+from .fake import random_job
+from .fake import random_country

@@ -3,6 +3,7 @@ from ShadowB.Safe.ext import real_ext
 from ShadowB.Safe.cleanText import is_clean
 from ShadowB.Safe.clean import cleann
 from ShadowB.Safe.safeFile import safe_file
+from ShadowB.Console.error import err
 import os
 
 
@@ -55,3 +56,19 @@ def size(file):
 def is_safe(file):
     return safe_file(file)
     
+    
+    
+def clean_text(text,mode="normal"):
+    final_result = ""
+    text1 = "".join(c for c in text if c.isalpha() or c.isspace())
+    if mode  == "normal":
+        final_result = text1
+    elif mode == "upper":
+        final_result = text1.upper()
+    elif mode == "lower":
+        final_result = text1.lower()
+    elif mode == "capital":
+        final_result = text1.title()    
+    else:
+        err(f"Invalid value : clean_text() does not contain mode = {mode} !")
+    return final_result

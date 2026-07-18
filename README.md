@@ -1,4 +1,4 @@
-# ShadowB 1.4
+# ShadowB 1.5
 
 [![PyPI - Version](https://img.shields.io/pypi/v/ShadowB)](https://pypi.org/project/ShadowB/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ShadowB)](https://pypi.org/project/ShadowB/)
@@ -40,6 +40,7 @@ pip install ShadowB
 - [console](#console)
 - [timer](#timer)
 - [emoji](#emoji)
+- [fake](#fake)
 - [test](#test)
 - [Responsible Use](#%EF%B8%8F-responsible-use)
 - [License](#-license)
@@ -208,6 +209,16 @@ safe.scan_file(file, check_list)     # -> True / False
 safe.validate_text(text, check_list) # -> True / False
 # It checks the content of the text, as it looks for offensive and unwanted words (the check will mostly be inaccurate, languages only : English, Arabic, Russian, or French)
 
+safe.clean_text(text,mode="normal") # cleaning the text from symbols and numbers 
+# (normal:The text remains as it is, lower:Everything is lowert, 
+# upper:Everything is uppert, capital:every word's 
+#beginning be uppercase)
+or safe.clean_text(text,mode="lower") 
+or safe.clean_text(text,mode="upper") 
+or safe.clean_text(text,mode="capital")
+
+
+
 ```
 ---
 
@@ -306,6 +317,55 @@ emoji.random_emoji() # It gives you a random emoji
 exp:
 
 print(emoji.fire()) # 🔥
+
+```
+## `fake`
+
+Generate fake data and export it to a CSV file.
+
+```python
+from ShadowB import fake
+
+fake.fake_csv(filename, rows, keys)
+
+# filename => CSV file name without ".csv"
+# rows => number of rows to generate
+# keys => list of data types to generate
+
+# Available keys:
+# "username"
+# "age"
+# "email"
+# "phone"
+# "random_country"
+# "random_job"
+# "salary"
+
+# Example:
+fake.fake_csv(
+    "users",
+    100,
+    ["username", "age", "email", "phone", "random_country", "random_job", "salary"]
+)
+
+
+# Individual generators
+
+```python
+from ShadowB import fake
+
+fake.username()
+fake.age(min_age, max_age)
+fake.email()
+fake.phone()
+fake.random_country()
+fake.random_job()
+fake.salary(min_salary, max_salary)
+# age(min_age, max_age)
+# If no values are provided, a random age between 18 and 45 is generated.
+
+# salary(min_salary, max_salary)
+# If no values are provided, a random salary between 1000 and 6000 is generated.
 
 ```
 
