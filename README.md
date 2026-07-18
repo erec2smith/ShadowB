@@ -292,7 +292,7 @@ print(timer.stop())
 
 A feature that lets you display an emoji in your code or choose a random emoji
 
-
+```python
 from ShadowB import emoji
 
 emoji.smile()
@@ -348,10 +348,8 @@ fake.fake_csv(
     ["username", "age", "email", "phone", "random_country", "random_job", "salary"]
 )
 
-
+# ==============================
 # Individual generators
-
-```python
 from ShadowB import fake
 
 fake.username()
