@@ -292,7 +292,7 @@ print(timer.stop())
 
 A feature that lets you display an emoji in your code or choose a random emoji
 
-```python
+
 from ShadowB import emoji
 
 emoji.smile()
